@@ -1,4 +1,5 @@
-import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 import Home from "../routeComponents/Home";
@@ -10,10 +11,10 @@ function App() {
   return (
     <BrowserRouter>
       <AuthContextComponent>
-        <Switch>
-          <Route exact path="/" component={Home} />
-          <Route path="/auth" component={AuthRouter} />
-        </Switch>
+        <Routes>
+          <Route exact path="/" element={ <Home />} />
+          <Route path="/auth" element={<AuthRouter />} />
+        </Routes>
       </AuthContextComponent>
     </BrowserRouter>
   );

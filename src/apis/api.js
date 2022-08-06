@@ -1,13 +1,8 @@
 import axios from "axios";
 
-const apis = {
-  development: "A URL DO SEU SERVIDOR EXPRESS LOCAL AQUI",
-  production: "A URL DO SEU SERVIDOR DEPLOYADO NO HEROKU AQUI",
-};
-
 // Pré-configurando a URL padrão do nosso backend em uma instância do Axios
 const api = axios.create({
-  baseURL: apis[process.env.NODE_ENV],
+  baseURL: process.env.REACT_APP_API_BASE,
 });
 
 // Configura a instância do Axios para injetar o cabeçalho de autenticação antes de cada requisição
